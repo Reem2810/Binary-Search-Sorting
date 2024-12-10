@@ -21,7 +21,7 @@ public class SortingAndSearchDemo {
                 right = mid - 1;
             }
         }
-        return -1; 
+        return -1;
     }
 
     // Insertion Sort implementation
@@ -112,13 +112,14 @@ public class SortingAndSearchDemo {
         System.out.println("Worst Case Scenario:");
         testBinarySearch(array, -1); // Element not in array
 
-        // Additional Bad Scenario
-        System.out.println("Bad Scenario 1:");
-        testBinarySearch(array, array[0]); // Element at the start
-
         // Additional Worse Scenario
         System.out.println("bad Scenario:");
         testBinarySearch(array, array[array.length - 1]); // Element at the end
+
+        //  Bad Scenario
+        System.out.println("Bad Scenario 1:");
+        testBinarySearch(array, array[0]); // Element at the start
+
         // Normal Scenario
         System.out.println("Normal Scenario:");
         testBinarySearch(array, array[array.length / 4]); // Element in the first quarter
@@ -132,7 +133,7 @@ public class SortingAndSearchDemo {
 
     private static void testSortingAlgorithmScenarios(int[] array, String algorithmName, java.util.function.Consumer<int[]> sortFunction) {
         // Worst Case Scenario
-        System.out.println(" Reversed Array Scenario:");
+        System.out.println(" Reversed Sorted Array Scenario:");
         int[] reversedArray = generateReverseSortedArray(array.length);
         testSortingAlgorithm(reversedArray, algorithmName, sortFunction);
 
@@ -141,7 +142,7 @@ public class SortingAndSearchDemo {
         testSortingAlgorithm(array, algorithmName, sortFunction);
 
         // Best Case Scenario
-        System.out.println("Best Case Scenario:");
+        System.out.println("Sorted Array Scenario:");
         int[] sortedArray = Arrays.copyOf(array, array.length);
         Arrays.sort(sortedArray);
         testSortingAlgorithm(sortedArray, algorithmName, sortFunction);
