@@ -27,16 +27,19 @@ public class SortingAndSearchDemo {
     // Insertion Sort implementation
     public static void insertionSort(int[] array) {
         for (int i = 1; i < array.length; i++) {
-            int key = array[i];
-            int j = i - 1;
+            int toBeInserted = array[i];
+            int j = i;
 
-            while (j >= 0 && array[j] > key) {
-                array[j + 1] = array[j];
+            while (j > 0 && array[j - 1] > toBeInserted) {
+                array[j] = array[j - 1];
                 j--;
             }
-            array[j + 1] = key;
+            
+            array[j] = toBeInserted;
         }
     }
+
+
 
     // Selection Sort implementation
     public static void selectionSort(int[] array) {
